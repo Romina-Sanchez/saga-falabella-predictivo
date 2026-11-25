@@ -162,7 +162,7 @@ if prompt := st.chat_input("Ej: Evalúa Vestuario con 12,000 pedidos, 4% devoluc
             client = genai.Client(api_key=api_key)
             history_text = "\n".join([f"{m['role']}: {m['content']}" for m in st.session_state.messages])
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-2.5-flash-lite",
                 contents=history_text,
                 config=types.GenerateContentConfig(system_instruction=SYSTEM_PROMPT, temperature=0.2)
             )
